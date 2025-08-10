@@ -13,18 +13,29 @@ app.use(express.json());
 //   port: 3306,
 // });
 
-const db = mysql.createConnection({
+// const db = mysql.createConnection({
+//   host: "mysql-schools.alwaysdata.net",
+//   user: "schools",
+//   password: "gl^ePYj2K%PgVF@#r#y%3X84K0igvv%fZrb",
+//   database: "schools_db",
+//   port: 3306,
+// });
+
+const db = mysql.createPool({
   host: "mysql-schools.alwaysdata.net",
   user: "schools",
   password: "gl^ePYj2K%PgVF@#r#y%3X84K0igvv%fZrb",
   database: "schools_db",
   port: 3306,
+  waitForConnections: true,
+  connectionLimit: 5, // adjust for free tier limits
+  queueLimit: 0
 });
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log("MySQL DB Connected");
-});
+// db.connect((err) => {
+//   if (err) throw err;
+//   console.log("MySQL DB Connected");
+// });
 
 function getDistance(lat1, lon1, lat2, lon2) {
   const R = 6371;
