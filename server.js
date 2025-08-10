@@ -14,10 +14,10 @@ app.use(express.json());
 // });
 
 const db = mysql.createConnection({
-  host: "besljsleeccelzi8ljeg-mysql.services.clever-cloud.com",
-  user: "besljsleeccelzi8ljeg",
-  password: "u85rvxg8xnrqcxnz",
-  database: "u85rvxg8xnrqcxnz",
+  host: "mysql-schools.alwaysdata.net",
+  user: "schools",
+  password: "gl^ePYj2K%PgVF@#r#y%3X84K0igvv%fZrb",
+  database: "schools_db",
   port: 3306,
 });
 
